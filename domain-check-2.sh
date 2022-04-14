@@ -315,7 +315,7 @@ WARNDAYS=30
 QUIET="FALSE"
 
 # Don't send emails by default (cmdline: -a)
-ALARM="FALSE"
+ALARM="TRUE"
 
 # Output the result in formatted (by default) or CSV format (csv) (cmdline: -o)
 OUTPUT_FORMAT="format"
