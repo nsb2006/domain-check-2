@@ -949,7 +949,7 @@ check_domain_status()
     then
         if [ "${ALARM}" == "TRUE" ]
         then
-            echo "域名${DOMAIN}已于${DOMAINDATE}到期。" \
+            echo "域名${DOMAIN}已于${DOMAINDATE}到期" \
                 | ${MAIL} -s "${DOMAIN}已过期" ${ADMIN}
         fi
         prints "${DOMAIN}" "Expired" "${DOMAINDATE}" "${DOMAINDIFF}" "${REGISTRAR}"
@@ -959,8 +959,8 @@ check_domain_status()
     then
         if [ "${ALARM}" == "TRUE" ]
         then
-            echo "The domain ${DOMAIN} will expire on ${DOMAINDATE}" \
-                | ${MAIL} -s "Domain ${DOMAIN} will expire in ${WARNDAYS}-days or less" ${ADMIN}
+            echo "域名${DOMAIN}将于${DOMAINDATE}到期" \
+                | ${MAIL} -s "${DOMAIN}将在${WARNDAYS}天后到期" ${ADMIN}
         fi
         prints "${DOMAIN}" "Expiring" "${DOMAINDATE}" "${DOMAINDIFF}" "${REGISTRAR}"
     elif [ ${DOMAINJULIAN} -eq 0 ] || [ ${MONTH} -le 0 ] || [ ${DAY} -le 0 ] || \
