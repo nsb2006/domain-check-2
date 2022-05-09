@@ -315,7 +315,7 @@ WARNDAYS=30
 QUIET="FALSE"
 
 # Don't send emails by default (cmdline: -a)
-ALARM="FALSE"
+ALARM="TRUE"
 
 # Output the result in formatted (by default) or CSV format (csv) (cmdline: -o)
 OUTPUT_FORMAT="format"
@@ -949,8 +949,8 @@ check_domain_status()
     then
         if [ "${ALARM}" == "TRUE" ]
         then
-            echo "The domain ${DOMAIN} has expired!" \
-                | ${MAIL} -s "Domain ${DOMAIN} has expired!" ${ADMIN}
+            echo "域名${DOMAIN}已于${DOMAINDATE}到期。" \
+                | ${MAIL} -s "${DOMAIN}已过期" ${ADMIN}
         fi
         prints "${DOMAIN}" "Expired" "${DOMAINDATE}" "${DOMAINDIFF}" "${REGISTRAR}"
 
